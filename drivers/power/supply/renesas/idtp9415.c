@@ -1057,7 +1057,7 @@ static ssize_t chip_freq_show(struct device *dev, struct device_attribute *attr,
 
 	f = idtp9220_get_freq(di);
 
-	return snprintf(buf, sizeof(buf), "Output Current: %dkHz\n", f);
+	return scnprintf(buf, sizeof(buf), "Output Current: %dkHz\n", f);
 }
 
 static void idtp9220_charging_info(struct idtp9220_device_info *di)
@@ -1280,7 +1280,7 @@ static ssize_t reverse_enable_show(struct device *dev,
 
 	dev_info(di->dev, "reverse enable gpio: %d\n", ret);
 
-	return snprintf(buf, sizeof(buf), "reverse enable: %d\n", ret);
+	return scnprintf(buf, sizeof(buf), "reverse enable: %d\n", ret);
 }
 
 static ssize_t reverse_gpio_store(struct device *dev,

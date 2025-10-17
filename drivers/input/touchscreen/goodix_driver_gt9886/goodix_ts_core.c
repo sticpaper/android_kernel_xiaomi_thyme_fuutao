@@ -710,7 +710,7 @@ static ssize_t goodix_ts_tp_rawdata_show(struct device *dev,
 	if (ret) {
 		ret = 0;
 		ts_err("tp_rawdata prepare goodix_tools_register failed");
-		r = snprintf(buf, 6, "-EIO\t\n");
+		r = snprintf(buf, 7, "-EIO\t\n");
 		if (r < 0)
 			return -EINVAL;
 		return 4; /*sizeof("-EIO")*/
@@ -739,7 +739,7 @@ static ssize_t goodix_ts_tp_get_testcfg_show(struct device *dev,
 	if (ret) {
 		ret = 0;
 		ts_err("tp_rawdata prepare goodix_tools_register failed");
-		r = snprintf(buf, 6, "-EIO\t\n");
+		r = snprintf(buf, 7, "-EIO\t\n");
 		if (r < 0)
 			return -EINVAL;
 		return 4; /*sizeof("-EIO")*/
@@ -2539,7 +2539,7 @@ static ssize_t goodix_rawdata_info_read(struct file *file, char __user *buf,
 	ret = goodix_tools_register();
 	if (ret) {
 		ts_err("tp_rawdata prepare goodix_tools_register failed");
-		cnt = snprintf(k_buf, 6, "-EIO\t\n");
+		cnt = snprintf(k_buf, 7, "-EIO\t\n");
 		goto out;
 	}
 	ts_info("start get rawdata!");
